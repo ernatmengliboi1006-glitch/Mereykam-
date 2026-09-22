@@ -1,130 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Merey ❤️</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #ffe5ec, #ffb3c6);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            z-index: 10;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        h1 {
-            color: #ff4d6d;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #4a4a4a;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .btn {
-            background-color: #ff4d6d;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
-        }
-        .btn:hover {
-            background-color: #ff758f;
-            transform: scale(1.05);
-        }
-        .btn:active {
-            transform: scale(0.95);
-        }
-        .heart {
-            position: fixed;
-            bottom: -30px;
-            color: #ff4d6d;
-            font-size: 20px;
-            animation: floatUp 3s linear forwards;
-            opacity: 0;
-            pointer-events: none;
-            z-index: 5;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) scale(0.5);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-110vh) scale(1.5);
-                opacity: 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Merey ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 25px 0;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ffe5ec, #ffb3c6, #ffd6e0);
+    color: #4a2630;
+}
+
+.card {
+    width: 92%;
+    max-width: 480px;
+    margin: auto;
+    padding: 30px 24px;
+    background: rgba(255,255,255,.96);
+    border-radius: 28px;
+    box-shadow: 0 15px 50px rgba(100,20,45,.2);
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #ff416d;
+    font-size: 38px;
+}
+
+.subtitle {
+    color: #b35a72;
+    font-size: 16px;
+    margin: 8px 0 22px;
+}
+
+.message {
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #4f3a40;
+}
+
+.message p {
+    margin: 0 0 16px;
+}
+
+.love {
+    text-align: center;
+    color: #ff416d;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 22px 0;
+}
+
+input {
+    display: none;
+}
+
+button {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    background: #ff416d;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    box-shadow: 0 7px 25px rgba(255,65,109,.4);
+}
+
+input:checked + label button {
+    transform: scale(1.05);
+    background: #ff174f;
+}
+
+.hearts {
+    display: none;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+input:checked ~ .hearts {
+    display: block;
+}
+
+.heart {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    font-size: 30px;
+    animation: up 3s ease-out forwards;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: .05s;
+}
+
+.heart:nth-child(2) {
+    left: 25%;
+    animation-delay: .15s;
+}
+
+.heart:nth-child(3) {
+    left: 40%;
+    animation-delay: .25s;
+}
+
+.heart:nth-child(4) {
+    left: 55%;
+    animation-delay: .1s;
+}
+
+.heart:nth-child(5) {
+    left: 70%;
+    animation-delay: .2s;
+}
+
+.heart:nth-child(6) {
+    left: 85%;
+    animation-delay: .3s;
+}
+
+.heart:nth-child(7) {
+    left: 35%;
+    animation-delay: .4s;
+}
+
+.heart:nth-child(8) {
+    left: 60%;
+    animation-delay: .5s;
+}
+
+.heart:nth-child(9) {
+    left: 15%;
+    animation-delay: .35s;
+}
+
+.heart:nth-child(10) {
+    left: 80%;
+    animation-delay: .45s;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0) scale(.4);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-95vh) scale(1.7) rotate(25deg);
+        opacity: 0;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div class="card">
-        <h1>For Merey ✨</h1>
-        <p>
-            I was just thinking about you and wanted to say...
-            I miss you so much, especially your beautiful eyes.
-            You mean the world to me. ❤️
-        </p>
-        <button class="btn" onclick="createHearts()">
-            Click here ❤️
-        </button>
+
+<div class="card">
+
+    <h1>For Merey ❤️</h1>
+
+    <div class="subtitle">
+        Саған айта алмай жүрген сөздерім...
     </div>
-    <script>
-        function createHearts() {
-            for (let i = 0; i < 20; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement("div");
-                    heart.classList.add("heart");
-                    heart.innerHTML = "❤️";
-                    heart.style.left = Math.random() * 100 + "vw";
-                    heart.style.fontSize =
-                        (Math.random() * 20 + 15) + "px";
-                    heart.style.animationDuration =
-                        (Math.random() * 2 + 2) + "s";
-                    document.body.appendChild(heart);
-                    setTimeout(() => {
-                        heart.remove();
-                    }, 4500);
-                }, i * 120);
-            }
-        }
-    </script>
+
+    <div class="message">
+
+        <p>
+            Мерей, мен саған осы кішкентай сайтты жай ғана әдемі болсын деп жасаған жоқпын.
+            Кейде адам ішіндегі сезімдерін сөзбен айтып жеткізе алмай қалады.
+            Сондықтан саған осы жерге өзімнің айтқым келген сөздерімді жазғым келді.
+        </p>
+
+        <p>
+            Шынымды айтсам, сен туралы ойламайтын кезім аз.
+            Кейде бір ән, бір сөз немесе жай ғана бір нәрсе сені есіме түсіреді.
+            Сол кезде еріксіз күлімсіреп қоямын.
+            Өйткені сенің өмірімдегі орның мен үшін ерекше.
+        </p>
+
+        <p>
+            Маған сенің күлкің, сөйлегенің, мінезің және әсіресе әдемі көздерің ұнайды.
+            Сенің қасыңда болған сәттерді, бірге сөйлескен кездерімізді бағалаймын.
+        </p>
+
+        <p>
+            Мен сенің мінсіз болғаныңды күтпеймін.
+            Сен қандай болсаң, солай болғаның үшін қымбатсың.
+            Сенің қуанышың да, мұңың да, жақсы және қиын күндерің де —
+            бәрі сені сен ететін нәрселер.
+        </p>
+
+        <p>
+            Кейде мен өз сезімімді дұрыс жеткізе алмай қалуым мүмкін.
+            Бірақ бір нәрсені білсең екен:
+            менің саған деген сезімім шынайы.
+        </p>
+
+        <p>
+            Мен сені <b>жақсы көремін</b>. ❤️
+            Бұл сөзді жай ғана әдемі естілсін деп айтып тұрған жоқпын.
+            Сен мен үшін шынымен қымбат адамсың.
+        </p>
+
+        <p>
+            Егер бір күні көңілің түссе, осы сайтқа кіріп,
+            осы сөздерді қайта оқы.
+            Бір жерде сені ойлап, саған жақсы нәрселер тілеп отырған адам
+            бар екенін есіңе ал.
+        </p>
+
+        <p>
+            Мүмкін бұл сайт қарапайым шығар.
+            Бірақ оның әрбір сөзінің артында шынайы сезім бар.
+            Мен саған тек бақыт, тыныштық және көп әдемі күндер тілеймін.
+        </p>
+
+    </div>
+
+    <div class="love">
+        Мен сені жақсы көремін, Мерей. ❤️
+    </div>
+
+    <input id="heartButton" type="checkbox">
+
+    <label for="heartButton">
+        <button type="button">
+            Мына жерді бас ❤️
+        </button>
+    </label>
+
+    <div class="hearts">
+        <span class="heart">❤️</span>
+        <span class="heart">💗</span>
+        <span class="heart">💕</span>
+        <span class="heart">💖</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💞</span>
+        <span class="heart">💗</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💕</span>
+        <span class="heart">💖</span>
+    </div>
+
+</div>
+
 </body>
 </html>
